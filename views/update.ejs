@@ -1,0 +1,94 @@
+<%-include('../partials/header.ejs')%>
+
+    <body>
+
+        <div class="container  ">
+            <h1 class="text-center alert alert-primary  p-2 ">Update Resume</h1>
+            <div class="row mt-1">
+                <!-- left col  -->
+                <div class="col">
+                    <h4 class=" text-center p-2 alert alert-success ">Personal Information</h4>
+
+                    <form action="/updateresume/<%=data._id%>" method="post">
+
+                        <div class="mb-2">
+                            <label for="">Your Name</label>
+                            <input type="text" name="name" placeholder="Enter here" class="form-control"
+                                value="<%= data.name%>">
+                        </div>
+                        <div class="mb-2">
+                            <label for="emailField" class="mt-2">Email</label>
+                            <input name="email" type="email" placeholder="Enter here" class="form-control"
+                                value="<%= data.email%>">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="contactField" class="mt-2">Contact</label>
+                            <input name="contact" type="number" placeholder="Enter url" class="form-control"
+                                value="<%= data.contact%>">
+                        </div>
+
+                        
+                        <div class="mb-2">
+                            <label for="contactField" class="mt-2">Profile</label>
+                            <input name="profile" type="url" placeholder="Enter url" class="form-control " value="<%= data.profile%>">
+                        </div>
+
+                        <div class="text-center p-1 alert alert-danger mt-3 ">
+                            <h4>Importaint Links</h4>
+                        </div>
+
+
+
+                        <div class="mb-2">
+                            <label for="profileField" class="mt-2">LinkedIn</label>
+                            <input name="linkedin" type="text" placeholder="Enter url" class="form-control ">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="profileField" class="mt-2">Git Hub</label>
+                            <input name="github" type="text" placeholder="Enter url" class="form-control ">
+                        </div>
+
+
+
+
+                </div>
+                <!-- right col  -->
+                <div class="col">
+                    <h4 class="text-center p-2 alert alert-danger">Professinal Information</h4>
+
+
+                    <div class="mb-2">
+                        <label for="">Skill</label>
+                        <input name="skill" class="form-control" placeholder="Enter here"
+                            value="<%= data.skill%>"></input>
+                    </div>
+                    <div class="mb-2">
+                        <label for="">Experience</label>
+                        <input name="experience" class="form-control" placeholder="Enter here"
+                            value="<%= data.experience%>"></input>
+                    </div>
+                    <div class="mb-2">
+                        <label for="">Projects</label>
+                        <input name="project" class="form-control" placeholder="Enter here"
+                            value="<%= data.project%>"></input>
+                    </div>
+                    <div class="mb-2">
+                        <label for="">Education</label>
+                        <input name="education" class="form-control" placeholder="Enter here"
+                            value="<%= data.education%>"></input>
+                    </div>
+                    <div class="update-btn">
+                        <button type="submit" class="btn btn-warning mt-2">Submit</button>
+                        </form>
+                        <a href="/"> <button class="btn btn-secondary  mt-2">Back Home</button></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </body>

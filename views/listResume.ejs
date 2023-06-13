@@ -1,0 +1,33 @@
+<%-include('../partials/header.ejs')%>
+
+    <div class="container text-center">
+        <h1 class="alert alert-primary mt-2">List of Resume</h1>
+        <table class="table " >
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% var i = 1 %>
+                <% Data.forEach((item)=>{ %>
+                    <tr>
+                        <td><%= i++%></td>
+                        <td><%= item.name%></td>
+                        <td><%= item.email%></td>
+                        <td> <a href="/detailsuser/<%=item._id%>"><button class="btn btn-primary">Details</button></a> </td>
+                        <td> <a href="/updateuser/<%=item._id%>"><button class="btn btn-primary">Update</button></a> </td>
+                        <td> <a href="/CVTamplate/<%=item._id%>"><button class="btn btn-primary">Viwes</button></a> </td>
+                        <td> <a href="/delete/<%=item._id%>"><button class="btn btn-primary">Delete</button></a> </td>
+                    </tr>
+              <%  })%>
+               
+            </tbody>
+        </table>
+        <a href="/"><button class="btn btn-primary btn-lg mt-5">Home</button> </a>
+    </div>
